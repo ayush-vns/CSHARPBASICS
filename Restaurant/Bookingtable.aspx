@@ -32,7 +32,14 @@
 
     </asp:GridView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:RestaurantsConnectionString %>" 
+        SelectCommand="SELECT * FROM [Booking] WHERE ([TableNo] = @TableNo) ORDER BY [TableNo], [BookingNo], [BookingTime]">
+        <SelectParameters>
+            <asp:QueryStringParameter Name="TableNo" QueryStringField="TableNo" 
+                Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
         <br />
         <asp:Label ID="Label1" runat="server" Text="TableNo"></asp:Label>
     <asp:Button ID="Button1" runat="server" Text="Book" onclick="Button1_Click1" />

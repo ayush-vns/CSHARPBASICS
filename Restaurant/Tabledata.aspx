@@ -35,6 +35,9 @@
                 <asp:TemplateField HeaderText="Booking">
                     <ItemTemplate><a target="cr" class="btn btn-primary" href='Bookingtable.aspx?TableNo=<%# Eval("TableNo") %>'> Booking</a></ItemTemplate>
                     </asp:TemplateField>
+                     <asp:TemplateField HeaderText="UnBooking">
+                    <ItemTemplate><a target="cr" class="btn btn-primary" href='UNBookingtable.aspx?TableNo=<%# Eval("TableNo") %>'> UnBooking</a></ItemTemplate>
+                    </asp:TemplateField>
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
