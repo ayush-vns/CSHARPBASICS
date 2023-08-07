@@ -304,7 +304,7 @@ WHERE  (TableNo = @Original_Status)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="Restaurants.dbo.TableDetails" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetBookingStatusByTableNo" Modifier="Public" Name="GetBookingStatusByTableNo" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetBookingStatusByTableNo">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="Restaurants.dbo.TableDetails" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetBookingStatusByTableNo" Modifier="Public" Name="GetBookingStatusByTableNo" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetBookingStatusByTableNo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Status
@@ -316,7 +316,7 @@ WHERE  (TableNo = @TableNo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MaxTableNo" Modifier="Public" Name="MaxTableNo" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="MaxTableNo">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MaxTableNo" Modifier="Public" Name="MaxTableNo" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="MaxTableNo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MAX(TableNo) FROM TableDetails</CommandText>
@@ -324,7 +324,7 @@ WHERE  (TableNo = @TableNo)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatus" Modifier="Public" Name="UpdateStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateStatus">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatus" Modifier="Public" Name="UpdateStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateStatus">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE TableDetails
@@ -337,6 +337,99 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
                 </UpdateCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="usertypesTableAdapter" GeneratorDataComponentClassName="usertypesTableAdapter" Name="usertypes" UserDataComponentName="usertypesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="Restaurants.dbo.usertypes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[usertypes] WHERE (([usertypeNo] = @Original_usertypeNo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_usertypeNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="usertypeNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[usertypes] ([usertype]) VALUES (@usertype)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@usertype" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="usertype" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT usertypeNo, usertype FROM dbo.usertypes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[usertypes] SET [usertype] = @usertype WHERE (([usertypeNo] = @Original_usertypeNo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@usertype" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="usertype" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_usertypeNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="usertypeNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="usertypeNo" DataSetColumn="usertypeNo" />
+              <Mapping SourceColumn="usertype" DataSetColumn="usertype" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsersFormTableAdapter" GeneratorDataComponentClassName="UsersFormTableAdapter" Name="UsersForm" UserDataComponentName="UsersFormTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="Restaurants.dbo.UsersForm" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[UsersForm] WHERE (([UserNo] = @Original_UserNo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_UserNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[UsersForm] ([UserName], [Name], [UserTypeNo], [Password]) VALUES (@UserName, @Name, @UserTypeNo, @Password)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UserName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@UserTypeNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserTypeNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Password" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Password" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT UserNo, UserName, Name, UserTypeNo, Password FROM dbo.UsersForm</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[UsersForm] SET [UserName] = @UserName, [Name] = @Name, [UserTypeNo] = @UserTypeNo, [Password] = @Password WHERE (([UserNo] = @Original_UserNo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UserName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UserName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@UserTypeNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserTypeNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Password" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Password" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_UserNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserNo" DataSetColumn="UserNo" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="UserTypeNo" DataSetColumn="UserTypeNo" />
+              <Mapping SourceColumn="Password" DataSetColumn="Password" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -463,6 +556,49 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="usertypes" msprop:Generator_TableClassName="usertypesDataTable" msprop:Generator_TableVarName="tableusertypes" msprop:Generator_TablePropName="usertypes" msprop:Generator_RowDeletingName="usertypesRowDeleting" msprop:Generator_RowChangingName="usertypesRowChanging" msprop:Generator_RowEvHandlerName="usertypesRowChangeEventHandler" msprop:Generator_RowDeletedName="usertypesRowDeleted" msprop:Generator_UserTableName="usertypes" msprop:Generator_RowChangedName="usertypesRowChanged" msprop:Generator_RowEvArgName="usertypesRowChangeEvent" msprop:Generator_RowClassName="usertypesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="usertypeNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnusertypeNo" msprop:Generator_ColumnPropNameInRow="usertypeNo" msprop:Generator_ColumnPropNameInTable="usertypeNoColumn" msprop:Generator_UserColumnName="usertypeNo" type="xs:int" />
+              <xs:element name="usertype" msprop:Generator_ColumnVarNameInTable="columnusertype" msprop:Generator_ColumnPropNameInRow="usertype" msprop:Generator_ColumnPropNameInTable="usertypeColumn" msprop:Generator_UserColumnName="usertype">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UsersForm" msprop:Generator_TableClassName="UsersFormDataTable" msprop:Generator_TableVarName="tableUsersForm" msprop:Generator_TablePropName="UsersForm" msprop:Generator_RowDeletingName="UsersFormRowDeleting" msprop:Generator_RowChangingName="UsersFormRowChanging" msprop:Generator_RowEvHandlerName="UsersFormRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersFormRowDeleted" msprop:Generator_UserTableName="UsersForm" msprop:Generator_RowChangedName="UsersFormRowChanged" msprop:Generator_RowEvArgName="UsersFormRowChangeEvent" msprop:Generator_RowClassName="UsersFormRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserNo" msprop:Generator_ColumnPropNameInRow="UserNo" msprop:Generator_ColumnPropNameInTable="UserNoColumn" msprop:Generator_UserColumnName="UserNo" type="xs:int" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserTypeNo" msprop:Generator_ColumnVarNameInTable="columnUserTypeNo" msprop:Generator_ColumnPropNameInRow="UserTypeNo" msprop:Generator_ColumnPropNameInTable="UserTypeNoColumn" msprop:Generator_UserColumnName="UserTypeNo" type="xs:int" />
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -481,5 +617,18 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
       <xs:selector xpath=".//mstns:TableDetails" />
       <xs:field xpath="mstns:TableNo" />
     </xs:unique>
+    <xs:unique name="usertypes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:usertypes" />
+      <xs:field xpath="mstns:usertypeNo" />
+    </xs:unique>
+    <xs:unique name="UsersForm_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UsersForm" />
+      <xs:field xpath="mstns:UserNo" />
+    </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_UsersForm_usertypes" msdata:parent="usertypes" msdata:child="UsersForm" msdata:parentkey="usertypeNo" msdata:childkey="UserTypeNo" msprop:Generator_UserChildTable="UsersForm" msprop:Generator_ChildPropName="GetUsersFormRows" msprop:Generator_UserRelationName="FK_UsersForm_usertypes" msprop:Generator_ParentPropName="usertypesRow" msprop:Generator_RelationVarName="relationFK_UsersForm_usertypes" msprop:Generator_UserParentTable="usertypes" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

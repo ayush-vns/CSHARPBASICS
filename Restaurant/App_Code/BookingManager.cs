@@ -27,10 +27,10 @@ public class BookingManager
             return false;
 
         }
-        catch (Exception ex)
+        catch (Exception )
         {
             return true;
-        }
+        }  
 
     }
 
