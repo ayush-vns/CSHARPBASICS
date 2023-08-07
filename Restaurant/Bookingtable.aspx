@@ -7,43 +7,35 @@
 <div class="col-md-12">
     <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" 
-        CellPadding="3" DataKeyNames="BookingNo" DataSourceID="SqlDataSource1" 
-        GridLines="Horizontal">
-        <AlternatingRowStyle BackColor="#F7F7F7" />
-            
+        DataKeyNames="TableNo" DataSourceID="SqlDataSource1" Width="409px">
         <Columns>
-            <asp:BoundField DataField="BookingNo" HeaderText="BookingNo" 
-                InsertVisible="False" ReadOnly="True" SortExpression="BookingNo" />
             <asp:BoundField DataField="TableNo" HeaderText="TableNo" 
-                SortExpression="TableNo" />
-            <asp:BoundField DataField="BookingTime" HeaderText="BookingTime" 
-                SortExpression="BookingTime" />
+                InsertVisible="False" ReadOnly="True" SortExpression="TableNo" />
+            <asp:BoundField DataField="Tablename" HeaderText="Tablename" 
+                SortExpression="Tablename" />
+            <asp:BoundField DataField="NoofSets" HeaderText="NoofSets" 
+                SortExpression="NoofSets" />
+            <asp:BoundField DataField="Comment" HeaderText="Comment" 
+                SortExpression="Comment" />
+            <asp:BoundField DataField="Status" HeaderText="Status" 
+                SortExpression="Status" />
         </Columns>
-        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
-        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
-        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
-        <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
-        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
-        <SortedAscendingCellStyle BackColor="#F4F4FD" />
-        <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
-        <SortedDescendingCellStyle BackColor="#D8D8F0" />
-        <SortedDescendingHeaderStyle BackColor="#3E3277" />
-
     </asp:GridView>
+    
+
+
+
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:RestaurantsConnectionString %>" 
-        SelectCommand="SELECT * FROM [Booking] WHERE ([TableNo] = @TableNo) ORDER BY [TableNo], [BookingNo], [BookingTime]">
+        SelectCommand="SELECT * FROM [Tabledetails] WHERE ([TableNo] = @TableNo)">
         <SelectParameters>
             <asp:QueryStringParameter Name="TableNo" QueryStringField="TableNo" 
                 Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
-        <br />
-        <asp:Label ID="Label1" runat="server" Text="TableNo"></asp:Label>
-    <asp:Button ID="Button1" runat="server" Text="Book" onclick="Button1_Click1" />
-    <asp:Button ID="Button2" runat="server" Text="unBook" />
+    <asp:Label ID="Label1" runat="server" Text="tablebooking"></asp:Label>
+    <asp:Button ID="Button3" runat="server" Text="book" onclick="Button3_Click" />
     
 
 

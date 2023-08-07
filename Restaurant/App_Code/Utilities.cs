@@ -33,9 +33,9 @@ public class Utilities
 
 
         }
-        catch (Exception ex)
+        catch (Exception )
         {
-
+            
         }
 
     }

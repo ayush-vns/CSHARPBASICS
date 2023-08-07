@@ -221,7 +221,7 @@ FROM     MenuItem</CommandText>
               <Mapping SourceColumn="BookingTime" DataSetColumn="BookingTime" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteBooking" Modifier="Public" Name="DeleteBooking" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteBooking">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteBooking" Modifier="Public" Name="DeleteBooking" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteBooking">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Booking
@@ -232,7 +232,7 @@ WHERE  (BookingNo = @Original_BookingNo)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MaxBooking" Modifier="Public" Name="MaxBooking" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MaxBooking">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MaxBooking" Modifier="Public" Name="MaxBooking" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="MaxBooking">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MAX(BookingNo) AS Expr1
@@ -293,7 +293,7 @@ FROM     Booking</CommandText>
               <Mapping SourceColumn="Status" DataSetColumn="Status" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteStatus" Modifier="Public" Name="DeleteStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteStatus">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteStatus" Modifier="Public" Name="DeleteStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteStatus">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM TableDetails
@@ -304,7 +304,19 @@ WHERE  (TableNo = @Original_Status)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MaxTableNo" Modifier="Public" Name="MaxTableNo" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MaxTableNo">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="Restaurants.dbo.TableDetails" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetBookingStatusByTableNo" Modifier="Public" Name="GetBookingStatusByTableNo" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetBookingStatusByTableNo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Status
+FROM     TableDetails
+WHERE  (TableNo = @TableNo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="TableNo" ColumnName="TableNo" DataSourceName="Restaurants.dbo.TableDetails" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TableNo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="TableNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MaxTableNo" Modifier="Public" Name="MaxTableNo" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="MaxTableNo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MAX(TableNo) FROM TableDetails</CommandText>
@@ -312,7 +324,7 @@ WHERE  (TableNo = @Original_Status)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatus" Modifier="Public" Name="UpdateStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateStatus">
+              <DbSource ConnectionRef="RestaurantsConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateStatus" Modifier="Public" Name="UpdateStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateStatus">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE TableDetails
@@ -334,7 +346,7 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Restaurantinfo" msprop:Generator_TableClassName="RestaurantinfoDataTable" msprop:Generator_TableVarName="tableRestaurantinfo" msprop:Generator_RowChangedName="RestaurantinfoRowChanged" msprop:Generator_TablePropName="Restaurantinfo" msprop:Generator_RowDeletingName="RestaurantinfoRowDeleting" msprop:Generator_RowChangingName="RestaurantinfoRowChanging" msprop:Generator_RowEvHandlerName="RestaurantinfoRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantinfoRowDeleted" msprop:Generator_RowClassName="RestaurantinfoRow" msprop:Generator_UserTableName="Restaurantinfo" msprop:Generator_RowEvArgName="RestaurantinfoRowChangeEvent">
+        <xs:element name="Restaurantinfo" msprop:Generator_TableClassName="RestaurantinfoDataTable" msprop:Generator_TableVarName="tableRestaurantinfo" msprop:Generator_TablePropName="Restaurantinfo" msprop:Generator_RowDeletingName="RestaurantinfoRowDeleting" msprop:Generator_RowChangingName="RestaurantinfoRowChanging" msprop:Generator_RowEvHandlerName="RestaurantinfoRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantinfoRowDeleted" msprop:Generator_UserTableName="Restaurantinfo" msprop:Generator_RowChangedName="RestaurantinfoRowChanged" msprop:Generator_RowEvArgName="RestaurantinfoRowChangeEvent" msprop:Generator_RowClassName="RestaurantinfoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RestaurantName" msprop:Generator_ColumnVarNameInTable="columnRestaurantName" msprop:Generator_ColumnPropNameInRow="RestaurantName" msprop:Generator_ColumnPropNameInTable="RestaurantNameColumn" msprop:Generator_UserColumnName="RestaurantName">
@@ -369,7 +381,7 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Restaurants" msprop:Generator_TableClassName="RestaurantsDataTable" msprop:Generator_TableVarName="tableRestaurants" msprop:Generator_TablePropName="Restaurants" msprop:Generator_RowDeletingName="RestaurantsRowDeleting" msprop:Generator_RowChangingName="RestaurantsRowChanging" msprop:Generator_RowEvHandlerName="RestaurantsRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantsRowDeleted" msprop:Generator_UserTableName="Restaurants" msprop:Generator_RowChangedName="RestaurantsRowChanged" msprop:Generator_RowEvArgName="RestaurantsRowChangeEvent" msprop:Generator_RowClassName="RestaurantsRow">
+        <xs:element name="Restaurants" msprop:Generator_TableClassName="RestaurantsDataTable" msprop:Generator_TableVarName="tableRestaurants" msprop:Generator_RowChangedName="RestaurantsRowChanged" msprop:Generator_TablePropName="Restaurants" msprop:Generator_RowDeletingName="RestaurantsRowDeleting" msprop:Generator_RowChangingName="RestaurantsRowChanging" msprop:Generator_RowEvHandlerName="RestaurantsRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantsRowDeleted" msprop:Generator_RowClassName="RestaurantsRow" msprop:Generator_UserTableName="Restaurants" msprop:Generator_RowEvArgName="RestaurantsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CategoryNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCategoryNo" msprop:Generator_ColumnPropNameInRow="CategoryNo" msprop:Generator_ColumnPropNameInTable="CategoryNoColumn" msprop:Generator_UserColumnName="CategoryNo" type="xs:int" />
@@ -390,7 +402,7 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MenuItem" msprop:Generator_TableClassName="MenuItemDataTable" msprop:Generator_TableVarName="tableMenuItem" msprop:Generator_RowChangedName="MenuItemRowChanged" msprop:Generator_TablePropName="MenuItem" msprop:Generator_RowDeletingName="MenuItemRowDeleting" msprop:Generator_RowChangingName="MenuItemRowChanging" msprop:Generator_RowEvHandlerName="MenuItemRowChangeEventHandler" msprop:Generator_RowDeletedName="MenuItemRowDeleted" msprop:Generator_RowClassName="MenuItemRow" msprop:Generator_UserTableName="MenuItem" msprop:Generator_RowEvArgName="MenuItemRowChangeEvent">
+        <xs:element name="MenuItem" msprop:Generator_TableClassName="MenuItemDataTable" msprop:Generator_TableVarName="tableMenuItem" msprop:Generator_TablePropName="MenuItem" msprop:Generator_RowDeletingName="MenuItemRowDeleting" msprop:Generator_RowChangingName="MenuItemRowChanging" msprop:Generator_RowEvHandlerName="MenuItemRowChangeEventHandler" msprop:Generator_RowDeletedName="MenuItemRowDeleted" msprop:Generator_UserTableName="MenuItem" msprop:Generator_RowChangedName="MenuItemRowChanged" msprop:Generator_RowEvArgName="MenuItemRowChangeEvent" msprop:Generator_RowClassName="MenuItemRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ItemNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" type="xs:int" />
@@ -413,7 +425,7 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_RowClassName="BookingRow" msprop:Generator_UserTableName="Booking" msprop:Generator_RowEvArgName="BookingRowChangeEvent">
+        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_UserTableName="Booking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_RowEvArgName="BookingRowChangeEvent" msprop:Generator_RowClassName="BookingRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BookingNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBookingNo" msprop:Generator_ColumnPropNameInRow="BookingNo" msprop:Generator_ColumnPropNameInTable="BookingNoColumn" msprop:Generator_UserColumnName="BookingNo" type="xs:int" />
@@ -422,7 +434,7 @@ WHERE  (TableNo = @Original_TableNo)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TableDetails" msprop:Generator_TableClassName="TableDetailsDataTable" msprop:Generator_TableVarName="tableTableDetails" msprop:Generator_RowChangedName="TableDetailsRowChanged" msprop:Generator_TablePropName="TableDetails" msprop:Generator_RowDeletingName="TableDetailsRowDeleting" msprop:Generator_RowChangingName="TableDetailsRowChanging" msprop:Generator_RowEvHandlerName="TableDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TableDetailsRowDeleted" msprop:Generator_RowClassName="TableDetailsRow" msprop:Generator_UserTableName="TableDetails" msprop:Generator_RowEvArgName="TableDetailsRowChangeEvent">
+        <xs:element name="TableDetails" msprop:Generator_TableClassName="TableDetailsDataTable" msprop:Generator_TableVarName="tableTableDetails" msprop:Generator_TablePropName="TableDetails" msprop:Generator_RowDeletingName="TableDetailsRowDeleting" msprop:Generator_RowChangingName="TableDetailsRowChanging" msprop:Generator_RowEvHandlerName="TableDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TableDetailsRowDeleted" msprop:Generator_UserTableName="TableDetails" msprop:Generator_RowChangedName="TableDetailsRowChanged" msprop:Generator_RowEvArgName="TableDetailsRowChangeEvent" msprop:Generator_RowClassName="TableDetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TableNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTableNo" msprop:Generator_ColumnPropNameInRow="TableNo" msprop:Generator_ColumnPropNameInTable="TableNoColumn" msprop:Generator_UserColumnName="TableNo" type="xs:int" />
