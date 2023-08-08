@@ -28,10 +28,6 @@
     <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Label ID="Label3" runat="server" Text="UserTypeNo"></asp:Label>
-    <asp:TextBox ID="txtUserTypeNo" runat="server"></asp:TextBox>
-    <br />
-    <br />
     <asp:Label ID="Label4" runat="server" Text="Password"></asp:Label>
     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
         <br />

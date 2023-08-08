@@ -16,7 +16,7 @@ public partial class RegistrationForm : System.Web.UI.Page
         try
         {
             if (!txtPassword.Text.Equals(txtConfirmPassword.Text))
-                throw new Exception("Passwords do not matched");
+            throw new Exception("Passwords do not matched");
             DataSet1TableAdapters.UsersFormTableAdapter da = new DataSet1TableAdapters.UsersFormTableAdapter();
             da.Insert(txtUsername.Text, txtName.Text, Convert.ToInt32(ddl.SelectedValue), txtPassword.Text);
             lbl.Text = "details submited";
