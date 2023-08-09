@@ -11,6 +11,7 @@ public partial class Home : System.Web.UI.Page
     {
         LoginManager.protectpage(Session, Response);
         lblusername.Text = LoginManager.getcurrentuser(Session);
+        lblusertype.Text = LoginManager.getcurrentusertype(Session);
 
     }
     protected void Button1_Click(object sender, EventArgs e)

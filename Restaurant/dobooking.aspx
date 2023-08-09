@@ -23,6 +23,7 @@
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:RestaurantsConnectionString %>" 
         SelectCommand="SELECT * FROM [TableDetails] order by tablename"></asp:SqlDataSource>
+
     
 </asp:Content>
 

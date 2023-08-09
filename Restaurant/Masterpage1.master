@@ -9,14 +9,25 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <asp:Label ID="lblCurrentUser" runat="server" Text="Label"></asp:Label>
     <form id="form1" runat="server">
-    <div>
     
+    <div>
+    <div class="contener">
+        <div class="row">
+        <div class="col-md-12">
+        <h1>Hello this is our page</h1>
+        </div>
+        
+        
+        </div>
+        
+        
+        </div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         <div class="contener">
         <div class="row">
         <div class="col-md-12">
-        <div 
         <h1>Hello this is our page</h1>
         </div>
         
@@ -28,6 +39,8 @@
         
         </asp:ContentPlaceHolder>
     </div>
+    <p>
+        &nbsp;</p>
     </form>
 </body>
 </html>

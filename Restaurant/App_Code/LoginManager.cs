@@ -8,6 +8,7 @@ using System.Web;
 /// </summary>
 public class LoginManager
 {
+    private static string homepage = "Home.aspx",loginpage="dologin.aspx";
     public static Boolean isuserlogin(System.Web.SessionState.HttpSessionState session)
     {
         if (session["username"] == null)
@@ -16,32 +17,40 @@ public class LoginManager
     }
     public static void dologout(System.Web.SessionState.HttpSessionState session)
     {
-        session.Abandon(); 
+        session.Abandon();
     }
     public static Boolean protectpage(System.Web.SessionState.HttpSessionState session, HttpResponse response)
     {
         if (isuserlogin(session))
             return true;
-        response.Redirect("dologin.aspx");
+        response.Redirect(loginpage);
         return false;
     }
 
     public static String getcurrentuser(System.Web.SessionState.HttpSessionState session)
     {
-        return "" + session["username"]; 
-    } 
+        return "" + session["username"];
+
+    }
+    public static String getcurrentusertype(System.Web.SessionState.HttpSessionState session)
+    {
+        return "" + session["usertype"];
+
+    }
     public static bool dologin(object password, object username, HttpResponse response, System.Web.SessionState.HttpSessionState session)
     {
         bool result = isusernameandpasswordcorrect(password, username);
         if (!result)
             return false;
         session["username"] = username;
-        response.Redirect("Home.aspx");
+        String userType = LoginManager.getcurrentusertype(session);
+        session["usertype"] = userType;
+      response.Redirect(homepage);
         return true;
-    
+
     }
 
-        
+
     public static bool isusernameandpasswordcorrect(object password, object username)
     {
         try
@@ -57,6 +66,22 @@ public class LoginManager
         catch (Exception ex)
         {
             return false;
+        }
+
+    }
+    public static String getdatabyusername(object username)
+    {
+        try
+        {
+            DataSet1TableAdapters.UsersFormTableAdapter da = new DataSet1TableAdapters.UsersFormTableAdapter();
+            string usertypeNo = "" + da.getusertypeNo("" + username);
+           
+            return usertypeNo;
+        }
+
+        catch (Exception ex)
+        {
+            return "";
         }
     }
 }

@@ -14,5 +14,6 @@ public partial class Test : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
         Label1.Text ="" +  BookingManager.isBooked(26);
+        Label3.Text = "" + LoginManager.getdatabyusername("sudhansu");
     }
 }

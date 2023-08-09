@@ -12,11 +12,7 @@
         font-style:oblique;
               
      }
-     h1
-     {
-         background-color:aqua;
-         
-     }
+   
 </style>
 
 
