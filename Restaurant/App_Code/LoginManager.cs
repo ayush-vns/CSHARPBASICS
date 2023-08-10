@@ -5,19 +5,20 @@ using System.Web;
 
 /// <summary>
 /// Summary description for LoginManager
-/// </summary>
+/// </summary>http://localhost:55229/Restaurant/App_Code/LoginManager.cs
 public class LoginManager
 {
-    private static string homepage = "Home.aspx",loginpage="dologin.aspx";
+    private static string homepage = "Home.aspx",loginpage="loginpage.aspx";
     public static Boolean isuserlogin(System.Web.SessionState.HttpSessionState session)
     {
         if (session["username"] == null)
             return false;
         return true;
     }
-    public static void dologout(System.Web.SessionState.HttpSessionState session)
+    public static void dologout(System.Web.SessionState.HttpSessionState session,HttpResponse response)
     {
         session.Abandon();
+        response.Redirect(loginpage);
     }
     public static Boolean protectpage(System.Web.SessionState.HttpSessionState session, HttpResponse response)
     {
@@ -60,6 +61,15 @@ public class LoginManager
             DataSet1.UsersFormDataTable dt = da.GetDataByloginform("" + username, "" + password);
             if (dt.Rows.Count <= 0)
                 return false;
+            string un, pwd;
+            DataSet1.UsersFormRow dr = (DataSet1.UsersFormRow)dt.Rows[0];
+            un = dr.UserName;
+            pwd = dr.Password;
+            if (!un.Equals(username))
+                return false;
+            if (!pwd.Equals(password))
+                return false;
+
             return true;
 
         }
@@ -69,12 +79,16 @@ public class LoginManager
         }
 
     }
-    public static String getdatabyusername(object username)
+    public static String getdatabyusername(object username, System.Web.SessionState.HttpSessionState session,HttpResponse response)
     {
         try
         {
             DataSet1TableAdapters.UsersFormTableAdapter da = new DataSet1TableAdapters.UsersFormTableAdapter();
             string usertypeNo = "" + da.getusertypeNo("" + username);
+            if(session["usertype"] == "admin" )
+                response.Redirect("Bookingtable.aspx");
+
+            
            
             return usertypeNo;
         }

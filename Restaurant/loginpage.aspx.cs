@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Dologin : System.Web.UI.Page
+public partial class loginpage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-     
+
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        try
+         try
         {
             String UserName = txtusername.Text;
             String Password = txtpassword.Text;
@@ -26,5 +26,6 @@ public partial class Dologin : System.Web.UI.Page
         {
         lbl.Text=ex.Message;
         }
+    
     }
 }
