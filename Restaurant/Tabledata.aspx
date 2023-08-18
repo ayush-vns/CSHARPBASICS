@@ -38,7 +38,8 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:RestaurantsConnectionString %>" 
+        ConnectionString="<%$ ConnectionStrings:RestaurantsConnectionString %>"
+         DeleteCommand = "delete from TableDetails where TableNo=@TableNo" 
         SelectCommand="SELECT * FROM [TableDetails]"></asp:SqlDataSource>
     
 

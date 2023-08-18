@@ -8,13 +8,14 @@
         >
         <Columns>
             <asp:BoundField DataField="Tablename" HeaderText="Tablename" 
-                SortExpression="Tablename" />
+                SortExpression="Tablename" /> 
             <asp:BoundField DataField="NoofSets" HeaderText="NoofSets" 
                 SortExpression="NoofSets" />
             <asp:BoundField DataField="Comment" HeaderText="Comment" 
                 SortExpression="Comment" />
 
                 <asp:TemplateField HeaderText="Booking">
+
                     <ItemTemplate><%# BookingManager.GetBookingUrl( Eval("TableNo"))  %></ItemTemplate>
                     </asp:TemplateField>
                      
@@ -22,7 +23,10 @@
     </asp:GridView>
       <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:RestaurantsConnectionString %>" 
+         DeleteCommand = "delete from TableDetails where TableNo=@TableNo"
+
         SelectCommand="SELECT * FROM [TableDetails] order by tablename"></asp:SqlDataSource>
+    
 
     
 </asp:Content>

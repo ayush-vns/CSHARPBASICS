@@ -481,7 +481,7 @@ WHERE  (usertypeNo =
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Restaurantinfo" msprop:Generator_TableClassName="RestaurantinfoDataTable" msprop:Generator_TableVarName="tableRestaurantinfo" msprop:Generator_RowChangedName="RestaurantinfoRowChanged" msprop:Generator_TablePropName="Restaurantinfo" msprop:Generator_RowDeletingName="RestaurantinfoRowDeleting" msprop:Generator_RowChangingName="RestaurantinfoRowChanging" msprop:Generator_RowEvHandlerName="RestaurantinfoRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantinfoRowDeleted" msprop:Generator_RowClassName="RestaurantinfoRow" msprop:Generator_UserTableName="Restaurantinfo" msprop:Generator_RowEvArgName="RestaurantinfoRowChangeEvent">
+        <xs:element name="Restaurantinfo" msprop:Generator_TableClassName="RestaurantinfoDataTable" msprop:Generator_TableVarName="tableRestaurantinfo" msprop:Generator_TablePropName="Restaurantinfo" msprop:Generator_RowDeletingName="RestaurantinfoRowDeleting" msprop:Generator_RowChangingName="RestaurantinfoRowChanging" msprop:Generator_RowEvHandlerName="RestaurantinfoRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantinfoRowDeleted" msprop:Generator_UserTableName="Restaurantinfo" msprop:Generator_RowChangedName="RestaurantinfoRowChanged" msprop:Generator_RowEvArgName="RestaurantinfoRowChangeEvent" msprop:Generator_RowClassName="RestaurantinfoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RestaurantName" msprop:Generator_ColumnVarNameInTable="columnRestaurantName" msprop:Generator_ColumnPropNameInRow="RestaurantName" msprop:Generator_ColumnPropNameInTable="RestaurantNameColumn" msprop:Generator_UserColumnName="RestaurantName">
@@ -516,7 +516,7 @@ WHERE  (usertypeNo =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Restaurants" msprop:Generator_TableClassName="RestaurantsDataTable" msprop:Generator_TableVarName="tableRestaurants" msprop:Generator_TablePropName="Restaurants" msprop:Generator_RowDeletingName="RestaurantsRowDeleting" msprop:Generator_RowChangingName="RestaurantsRowChanging" msprop:Generator_RowEvHandlerName="RestaurantsRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantsRowDeleted" msprop:Generator_UserTableName="Restaurants" msprop:Generator_RowChangedName="RestaurantsRowChanged" msprop:Generator_RowEvArgName="RestaurantsRowChangeEvent" msprop:Generator_RowClassName="RestaurantsRow">
+        <xs:element name="Restaurants" msprop:Generator_TableClassName="RestaurantsDataTable" msprop:Generator_TableVarName="tableRestaurants" msprop:Generator_RowChangedName="RestaurantsRowChanged" msprop:Generator_TablePropName="Restaurants" msprop:Generator_RowDeletingName="RestaurantsRowDeleting" msprop:Generator_RowChangingName="RestaurantsRowChanging" msprop:Generator_RowEvHandlerName="RestaurantsRowChangeEventHandler" msprop:Generator_RowDeletedName="RestaurantsRowDeleted" msprop:Generator_RowClassName="RestaurantsRow" msprop:Generator_UserTableName="Restaurants" msprop:Generator_RowEvArgName="RestaurantsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CategoryNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCategoryNo" msprop:Generator_ColumnPropNameInRow="CategoryNo" msprop:Generator_ColumnPropNameInTable="CategoryNoColumn" msprop:Generator_UserColumnName="CategoryNo" type="xs:int" />
@@ -537,7 +537,7 @@ WHERE  (usertypeNo =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MenuItem" msprop:Generator_TableClassName="MenuItemDataTable" msprop:Generator_TableVarName="tableMenuItem" msprop:Generator_RowChangedName="MenuItemRowChanged" msprop:Generator_TablePropName="MenuItem" msprop:Generator_RowDeletingName="MenuItemRowDeleting" msprop:Generator_RowChangingName="MenuItemRowChanging" msprop:Generator_RowEvHandlerName="MenuItemRowChangeEventHandler" msprop:Generator_RowDeletedName="MenuItemRowDeleted" msprop:Generator_RowClassName="MenuItemRow" msprop:Generator_UserTableName="MenuItem" msprop:Generator_RowEvArgName="MenuItemRowChangeEvent">
+        <xs:element name="MenuItem" msprop:Generator_TableClassName="MenuItemDataTable" msprop:Generator_TableVarName="tableMenuItem" msprop:Generator_TablePropName="MenuItem" msprop:Generator_RowDeletingName="MenuItemRowDeleting" msprop:Generator_RowChangingName="MenuItemRowChanging" msprop:Generator_RowEvHandlerName="MenuItemRowChangeEventHandler" msprop:Generator_RowDeletedName="MenuItemRowDeleted" msprop:Generator_UserTableName="MenuItem" msprop:Generator_RowChangedName="MenuItemRowChanged" msprop:Generator_RowEvArgName="MenuItemRowChangeEvent" msprop:Generator_RowClassName="MenuItemRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ItemNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" type="xs:int" />
@@ -560,7 +560,7 @@ WHERE  (usertypeNo =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_RowClassName="BookingRow" msprop:Generator_UserTableName="Booking" msprop:Generator_RowEvArgName="BookingRowChangeEvent">
+        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_UserTableName="Booking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_RowEvArgName="BookingRowChangeEvent" msprop:Generator_RowClassName="BookingRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BookingNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBookingNo" msprop:Generator_ColumnPropNameInRow="BookingNo" msprop:Generator_ColumnPropNameInTable="BookingNoColumn" msprop:Generator_UserColumnName="BookingNo" type="xs:int" />
@@ -569,7 +569,7 @@ WHERE  (usertypeNo =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TableDetails" msprop:Generator_TableClassName="TableDetailsDataTable" msprop:Generator_TableVarName="tableTableDetails" msprop:Generator_RowChangedName="TableDetailsRowChanged" msprop:Generator_TablePropName="TableDetails" msprop:Generator_RowDeletingName="TableDetailsRowDeleting" msprop:Generator_RowChangingName="TableDetailsRowChanging" msprop:Generator_RowEvHandlerName="TableDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TableDetailsRowDeleted" msprop:Generator_RowClassName="TableDetailsRow" msprop:Generator_UserTableName="TableDetails" msprop:Generator_RowEvArgName="TableDetailsRowChangeEvent">
+        <xs:element name="TableDetails" msprop:Generator_TableClassName="TableDetailsDataTable" msprop:Generator_TableVarName="tableTableDetails" msprop:Generator_TablePropName="TableDetails" msprop:Generator_RowDeletingName="TableDetailsRowDeleting" msprop:Generator_RowChangingName="TableDetailsRowChanging" msprop:Generator_RowEvHandlerName="TableDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TableDetailsRowDeleted" msprop:Generator_UserTableName="TableDetails" msprop:Generator_RowChangedName="TableDetailsRowChanged" msprop:Generator_RowEvArgName="TableDetailsRowChangeEvent" msprop:Generator_RowClassName="TableDetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TableNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTableNo" msprop:Generator_ColumnPropNameInRow="TableNo" msprop:Generator_ColumnPropNameInTable="TableNoColumn" msprop:Generator_UserColumnName="TableNo" type="xs:int" />
@@ -598,7 +598,7 @@ WHERE  (usertypeNo =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usertypes" msprop:Generator_TableClassName="usertypesDataTable" msprop:Generator_TableVarName="tableusertypes" msprop:Generator_RowChangedName="usertypesRowChanged" msprop:Generator_TablePropName="usertypes" msprop:Generator_RowDeletingName="usertypesRowDeleting" msprop:Generator_RowChangingName="usertypesRowChanging" msprop:Generator_RowEvHandlerName="usertypesRowChangeEventHandler" msprop:Generator_RowDeletedName="usertypesRowDeleted" msprop:Generator_RowClassName="usertypesRow" msprop:Generator_UserTableName="usertypes" msprop:Generator_RowEvArgName="usertypesRowChangeEvent">
+        <xs:element name="usertypes" msprop:Generator_TableClassName="usertypesDataTable" msprop:Generator_TableVarName="tableusertypes" msprop:Generator_TablePropName="usertypes" msprop:Generator_RowDeletingName="usertypesRowDeleting" msprop:Generator_RowChangingName="usertypesRowChanging" msprop:Generator_RowEvHandlerName="usertypesRowChangeEventHandler" msprop:Generator_RowDeletedName="usertypesRowDeleted" msprop:Generator_UserTableName="usertypes" msprop:Generator_RowChangedName="usertypesRowChanged" msprop:Generator_RowEvArgName="usertypesRowChangeEvent" msprop:Generator_RowClassName="usertypesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="usertypeNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnusertypeNo" msprop:Generator_ColumnPropNameInRow="usertypeNo" msprop:Generator_ColumnPropNameInTable="usertypeNoColumn" msprop:Generator_UserColumnName="usertypeNo" type="xs:int" />
@@ -612,7 +612,7 @@ WHERE  (usertypeNo =
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UsersForm" msprop:Generator_TableClassName="UsersFormDataTable" msprop:Generator_TableVarName="tableUsersForm" msprop:Generator_RowChangedName="UsersFormRowChanged" msprop:Generator_TablePropName="UsersForm" msprop:Generator_RowDeletingName="UsersFormRowDeleting" msprop:Generator_RowChangingName="UsersFormRowChanging" msprop:Generator_RowEvHandlerName="UsersFormRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersFormRowDeleted" msprop:Generator_RowClassName="UsersFormRow" msprop:Generator_UserTableName="UsersForm" msprop:Generator_RowEvArgName="UsersFormRowChangeEvent">
+        <xs:element name="UsersForm" msprop:Generator_TableClassName="UsersFormDataTable" msprop:Generator_TableVarName="tableUsersForm" msprop:Generator_TablePropName="UsersForm" msprop:Generator_RowDeletingName="UsersFormRowDeleting" msprop:Generator_RowChangingName="UsersFormRowChanging" msprop:Generator_RowEvHandlerName="UsersFormRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersFormRowDeleted" msprop:Generator_UserTableName="UsersForm" msprop:Generator_RowChangedName="UsersFormRowChanged" msprop:Generator_RowEvArgName="UsersFormRowChangeEvent" msprop:Generator_RowClassName="UsersFormRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserNo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserNo" msprop:Generator_ColumnPropNameInRow="UserNo" msprop:Generator_ColumnPropNameInTable="UserNoColumn" msprop:Generator_UserColumnName="UserNo" type="xs:int" />
@@ -670,7 +670,7 @@ WHERE  (usertypeNo =
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_UsersForm_usertypes" msdata:parent="usertypes" msdata:child="UsersForm" msdata:parentkey="usertypeNo" msdata:childkey="UserTypeNo" msprop:Generator_UserChildTable="UsersForm" msprop:Generator_ChildPropName="GetUsersFormRows" msprop:Generator_UserRelationName="FK_UsersForm_usertypes" msprop:Generator_RelationVarName="relationFK_UsersForm_usertypes" msprop:Generator_UserParentTable="usertypes" msprop:Generator_ParentPropName="usertypesRow" />
+      <msdata:Relationship name="FK_UsersForm_usertypes" msdata:parent="usertypes" msdata:child="UsersForm" msdata:parentkey="usertypeNo" msdata:childkey="UserTypeNo" msprop:Generator_UserChildTable="UsersForm" msprop:Generator_ChildPropName="GetUsersFormRows" msprop:Generator_UserRelationName="FK_UsersForm_usertypes" msprop:Generator_ParentPropName="usertypesRow" msprop:Generator_RelationVarName="relationFK_UsersForm_usertypes" msprop:Generator_UserParentTable="usertypes" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

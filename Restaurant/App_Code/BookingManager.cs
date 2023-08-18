@@ -27,11 +27,39 @@ public class BookingManager
             return false;
 
         }
-        catch (Exception )
+        catch (Exception ex )
         {
             return true;
         }  
 
+    }
+    public static string getunbookingurl(object TableNo)
+    {
+           
+            if (unbooked(TableNo))
+                return "unbooking";
+            return "<a href='Bookingtable.aspx?TableNo= '>unbook Now</a>";
+    }
+
+    public static bool unbooked(Object TableNo)
+    {
+        try
+        {
+            string status = GetBookingStatusByTableNo(TableNo);
+            if (status.Equals("unbooked"))
+                return true;
+
+            return false;
+
+        }
+        catch (Exception ex)
+        {
+            return true;
+        }  
+        
+        
+        
+    
     }
 
     public static String GetBookingStatusByTableNo(Object TableNo)

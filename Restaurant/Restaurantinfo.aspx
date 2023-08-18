@@ -4,21 +4,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<center>
+<div class="container-fluid">
+     <div class="col-md-12">
 
 
-        <asp:Label  ID="lbl" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="lblRestaurantName" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="lblPhoneNo" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="lblPincode" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="lblTagline" runat="server" Text=""></asp:Label>
-
-</center>
+                <asp:Label  ID="lbl" runat="server" Text=""></asp:Label>
+                <br />
+                <asp:Label ID="lblRestaurantName" runat="server" Text=""></asp:Label>
+                <br />
+                <asp:Label ID="lblPhoneNo" runat="server" Text=""></asp:Label>
+                <br />
+                <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label>
+                <br />
+                <asp:Label ID="lblPincode" runat="server" Text=""></asp:Label>
+                <br />
+                <asp:Label ID="lblTagline" runat="server" Text=""></asp:Label>
+        </div>
+ </div>
 </asp:Content>
 
